@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Govt Polytechnic Leh</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #0077b6;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #caf0f8;
+}
+
+.header h1 {
+  font-size: 32px;
+}
+
+/* COURSE SECTION */
+.section {
+  padding: 40px 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h2 {
+  color: #0077b6;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+.footer {
+  background: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <h3>GPC Leh</h3>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="course.html">Courses</a>
+    <a href="#">Admission</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Our Diploma Courses</h1>
+  <p>We offer 3-Year Diploma Programs in Engineering</p>
+</div>
+
+<!-- COURSES -->
+<div class="section">
+  <div class="cards">
+
+    <!-- CIVIL -->
+    <div class="card">
+      <h2>🏗 Civil Engineering</h2>
+      <p><b>Duration:</b> 3 Years</p>
+      <p>Learn construction, design, and infrastructure development including roads, bridges, and buildings.</p>
+      <a href="/civil.html" class="btn">View Details</a>
+    </div>
+
+    <!-- COMPUTER -->
+    <div class="card">
+      <h2>💻 Computer Engineering</h2>
+      <p><b>Duration:</b> 3 Years</p>
+      <p>Study programming, networking, and software development with modern technologies.</p>
+      <a href="computer.html" class="btn">View Details</a>
+    </div>
+
+    <!-- MECHANICAL -->
+    <div class="card">
+      <h2>⚙ Mechanical Engineering</h2>
+      <p><b>Duration:</b> 3 Years</p>
+      <p>Understand machines, manufacturing, thermodynamics, and mechanical systems.</p>
+      <a href="mechanical.html" class="btn">View Details</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 Govt Polytechnic College Leh</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Govt Polytechnic College Leh</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #0077b6;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* HERO SLIDER */
+.hero {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active {
+  display: block;
+}
+
+/* SECTION */
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #caf0f8;
+}
+
+/* NOTICE BOARD */
+.notice {
+  background: #ffd166;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.notice p {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+?
+
+/* FOOTER */
+.footer {
+  background: #023e8a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  
+    <div id="wrap">
+
+      <div id="top">  <a href="index.htm"><img src="image/logo.gif" alt="Govt. Polytechnic College Leh" title="Govt. Polytechnic College, Leh - J&amp;K" width="1800" height="135" border="0"></a>
+      <div id="top-right">
+     </div>
+       </div>
+   <b><a href="/Aboutus.html">About us</a>
+    <a href="/Course.html">Courses</a>
+    <a href="/admission.html">admission</a>
+    <a href="/contact.html">Contact</a></b>
+    </div>
+</div>
+
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="slide active">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&s">
+  </div>
+  <div class="slide">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&s">
+  </div>
+  <div class="slide">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&s">
+  </div>
+</div>
+
+<!-- NOTICE -->
+<div class="notice">
+  <p><a href="admission.html">📢 Admissions Open | Exam Schedule Released | New Courses Available</a></p>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>Why Choose Us?</h2>
+  <div class="cards">
+   <div class="card">🎓 Quality Education</div>
+    <div class="card">🏫 Modern Labs</div>
+    <div class="card">💼 Placement Support</div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<div class="section">
+  <h2>Our Courses</h2>
+  <div class="cards">
+    <div class="card">Computer Engineering</div>
+    <div class="card">Civil Engineering</div>
+    <div class="card">Mechanical Engineering</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <b><p>© 2026 Govt Polytechnic College Leh</p></b>
+</div>
+
+<script>
+// SLIDER SCRIPT
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide() {
+  slides.forEach(slide => slide.classList.remove("active"));
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}
+
+setInterval(showSlide, 3000);
+</script>
+
+</body>
+</html>
