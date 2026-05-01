@@ -1,217 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Computer Engineering - Govt Polytechnic Leh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Engineering - Govt Polytechnic College Leh</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-  background: #0077b6;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 40px 20px;
-  background: #caf0f8;
-}
-
-/* SECTION */
-.section {
-  padding: 40px 20px;
-}
-
-.box {
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* CARDS */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card {
-  flex: 1 1 280px;
-  background: #f1f1f1;
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  background: #e0f7ff;
-}
-
-/* TABLE */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background: #0077b6;
-  color: white;
-}
-
-/* FOOTER */
-.footer {
-  background: #023e8a;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-</style>
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../components.js" defer></script>
 </head>
 
-<body>
+<body class="department-page">
+  <app-navbar base="../"></app-navbar>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <h3>Computer Engineering</h3>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="course.html">Courses</a>
-    <a href="admission.html">Admission</a>
-  </div>
-</div>
-
-<!-- HEADER -->
-<div class="header">
-  <h1>Computer Engineering Diploma</h1>
-  <p>3-Year Diploma Program - Govt Polytechnic College Leh</p>
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-  <div class="box">
-    <h2>About Computer Engineering</h2>
-    <p>
-      Computer Engineering is a modern and fast-growing field that focuses on programming,
-      software development, computer hardware, networking, and emerging technologies like AI and cloud computing.
-      It combines both hardware and software knowledge.
-    </p>
-  </div>
-</div>
-
-<!-- SYLLABUS -->
-<div class="section">
-  <div class="box">
-    <h2>Semester-wise Syllabus (3 Years)</h2>
-
-    <table>
-      <tr>
-        <th>Semester</th>
-        <th>Main Subjects</th>
-      </tr>
-
-      <tr>
-        <td>1st Semester</td>
-        <td>Engineering Mathematics, Basics of IT, Programming Fundamentals, Engineering Drawing</td>
-      </tr>
-
-      <tr>
-        <td>2nd Semester</td>
-        <td>C Programming, Digital Electronics, Computer Fundamentals, Applied Physics</td>
-      </tr>
-
-      <tr>
-        <td>3rd Semester</td>
-        <td>Data Structures, Object Oriented Programming, Computer Architecture</td>
-      </tr>
-
-      <tr>
-        <td>4th Semester</td>
-        <td>Database Management System, Operating System, Web Development Basics</td>
-      </tr>
-
-      <tr>
-        <td>5th Semester</td>
-        <td>Networking, Java Programming, Software Engineering</td>
-      </tr>
-
-      <tr>
-        <td>6th Semester</td>
-        <td>Project Work, Industrial Training, Advanced Programming & Final Project</td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-<!-- KEY SKILLS -->
-<div class="section">
-  <div class="box">
-    <h2>Key Skills You Will Learn</h2>
-
-    <div class="cards">
-      <div class="card">💻 Programming (C, Java, Python)</div>
-      <div class="card">🌐 Web Development</div>
-      <div class="card">🗄 Database Management</div>
-      <div class="card">🔐 Cyber Security Basics</div>
-      <div class="card">📡 Computer Networking</div>
-      <div class="card">🤖 Basics of AI & ML</div>
+  <section class="department-hero">
+    <div class="department-hero-inner">
+      <div class="department-kicker">Department</div>
+      <h1>Computer Engineering</h1>
+      <p>
+        A practical diploma program focused on programming, networks, databases, web systems, and emerging digital technologies for modern industry.
+      </p>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CAREER -->
-<div class="section">
-  <div class="box">
-    <h2>Career Opportunities</h2>
+  <main class="department-content">
+    <section class="department-overview">
+      <div>
+        <div class="department-section-label">About Department</div>
+        <h2>Creating confident problem solvers for the digital world</h2>
+        <p>
+          The Computer Engineering department develops strong foundations in software, hardware, networking, and information systems. Students learn to design applications, manage data, understand computer architecture, and apply technology to real-life technical problems.
+        </p>
+        <div class="department-actions">
+          <a class="department-action" href="comp_faculty.html"><i data-lucide="users"></i> View Faculty</a>
+          <a class="department-action secondary" href="comp_syllabus.html"><i data-lucide="file-text"></i> Syllabus</a>
+          <a class="department-action secondary" href="comp_labs.html"><i data-lucide="monitor-cog"></i> Labs</a>
+        </div>
+      </div>
 
-    <div class="cards">
-      <div class="card">💻 Software Developer</div>
-      <div class="card">🌐 Web Developer</div>
-      <div class="card">🖥 IT Support Engineer</div>
-      <div class="card">📡 Network Engineer</div>
-      <div class="card">🏢 Government IT Jobs</div>
-      <div class="card">📊 Database Administrator</div>
+      <div class="department-stats">
+        <div class="department-stat">
+          <i data-lucide="clock-3"></i>
+          <div><strong>3 Years</strong><span>Full-time diploma program</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="code-2"></i>
+          <div><strong>Software First</strong><span>Programming, web, DBMS, and projects</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="network"></i>
+          <div><strong>Industry Skills</strong><span>Networking, IT support, and security basics</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="department-grid">
+      <section class="department-block">
+        <div class="department-section-label">What Students Learn</div>
+        <h2>Core Skills</h2>
+        <div class="department-card-grid">
+          <div class="department-card"><i data-lucide="terminal"></i><div><strong>Programming</strong><span>C, Java, Python, and logic building.</span></div></div>
+          <div class="department-card"><i data-lucide="globe-2"></i><div><strong>Web Development</strong><span>Responsive websites and application basics.</span></div></div>
+          <div class="department-card"><i data-lucide="database"></i><div><strong>Database Systems</strong><span>Data modeling, queries, and DBMS concepts.</span></div></div>
+          <div class="department-card"><i data-lucide="shield-check"></i><div><strong>Security Basics</strong><span>Safe systems, access, and cyber hygiene.</span></div></div>
+        </div>
+      </section>
+
+      <section class="department-block">
+        <div class="department-section-label">Career Paths</div>
+        <h2>Opportunities</h2>
+        <div class="department-card-grid">
+          <div class="department-card"><i data-lucide="laptop"></i><div><strong>Software Developer</strong><span>Build and maintain applications.</span></div></div>
+          <div class="department-card"><i data-lucide="router"></i><div><strong>Network Technician</strong><span>Support computer networks and systems.</span></div></div>
+          <div class="department-card"><i data-lucide="headphones"></i><div><strong>IT Support Engineer</strong><span>Help users and maintain infrastructure.</span></div></div>
+          <div class="department-card"><i data-lucide="bar-chart-3"></i><div><strong>Database Assistant</strong><span>Organize and monitor institutional data.</span></div></div>
+        </div>
+      </section>
     </div>
-  </div>
-</div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2026 Govt Polytechnic College Leh</p>
-</div>
+    <section class="department-block" style="margin-top: 28px;">
+      <div class="department-section-label">Academic Flow</div>
+      <h2>Semester-wise Highlights</h2>
+      <ul class="semester-list">
+        <li><strong>Semester 1</strong><span>Engineering Mathematics, Basics of IT, Programming Fundamentals, Engineering Drawing.</span></li>
+        <li><strong>Semester 2</strong><span>C Programming, Digital Electronics, Computer Fundamentals, Applied Physics.</span></li>
+        <li><strong>Semester 3</strong><span>Data Structures, Object Oriented Programming, Computer Architecture.</span></li>
+        <li><strong>Semester 4</strong><span>Database Management System, Operating System, Web Development Basics.</span></li>
+        <li><strong>Semester 5</strong><span>Networking, Java Programming, Software Engineering.</span></li>
+        <li><strong>Semester 6</strong><span>Project Work, Industrial Training, Advanced Programming, and final project.</span></li>
+      </ul>
+    </section>
+  </main>
 
+  <app-footer base="../"></app-footer>
 </body>
 </html>

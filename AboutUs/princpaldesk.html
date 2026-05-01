@@ -3,157 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal's Desk</title>
+    <title>Principal's Desk - Govt Polytechnic College Leh</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/components.css">
+    
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #eef2f7;
-            color: #2c3e50;
+            background: #f7fafc;
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            padding-top: 75px;
         }
 
-        header {
-            background: linear-gradient(135deg, #1f3c88, #2c3e50);
+        .page-hero {
+            background:
+                linear-gradient(120deg, rgba(15, 23, 42, 0.94), rgba(2, 62, 138, 0.88)),
+                url("../image/bg-logo.png") center / 360px auto no-repeat;
             color: white;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            overflow: hidden;
+            padding: 74px 24px 112px;
+            position: relative;
         }
 
-        .container {
-            max-width: 950px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.14), transparent 45%, rgba(255, 183, 3, 0.13));
+            pointer-events: none;
         }
 
-        .profile {
-            text-align: center;
-            margin-bottom: 25px;
+        .hero-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .profile img {
-            width: 270px;
-            height: 270px;
+        .eyebrow {
+            align-items: center;
+            color: #bae6fd;
+            display: inline-flex;
+            font-size: 0.78rem;
+            font-weight: 700;
+            gap: 8px;
+            letter-spacing: 1.6px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            background: #ffb703;
+            content: '';
+            display: inline-block;
+            height: 2px;
+            width: 34px;
+        }
+
+        .page-hero h1 {
+            color: white;
+            font-size: 3.25rem;
+            line-height: 1.05;
+            margin: 0 0 18px;
+            max-width: 760px;
+        }
+
+        .page-hero p {
+            color: #dbeafe;
+            font-size: 1.12rem;
+            line-height: 1.75;
+            margin: 0;
+            max-width: 680px;
+        }
+
+        .desk-container {
+            max-width: 1120px;
+            margin: -72px auto 70px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .desk-shell {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+            display: grid;
+            grid-template-columns: minmax(300px, 360px) 1fr;
+            overflow: hidden;
+        }
+
+        .profile-panel {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef7ff 100%);
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            padding: 28px;
+        }
+
+        .portrait-card {
+            background: #0f172a;
+            border-radius: 8px;
+            min-height: 410px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portrait-card img {
+            display: block;
+            height: 100%;
+            min-height: 410px;
             object-fit: cover;
-            border-radius: 10%;
-            border: 5px solid #3d3d3d;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            object-position: center top;
+            width: 100%;
         }
 
-        .name {
-            font-size: 22px;
+        .portrait-card::after {
+            background: linear-gradient(180deg, transparent 42%, rgba(15, 23, 42, 0.92));
+            content: '';
+            inset: 0;
+            position: absolute;
+        }
+
+        .profile-caption {
+            bottom: 0;
+            color: white;
+            left: 0;
+            padding: 26px;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+        }
+
+        .profile-caption h2 {
+            color: white;
+            font-size: 1.45rem;
+            line-height: 1.25;
+            margin: 0 0 8px;
+        }
+
+        .profile-caption p {
+            color: #bae6fd;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .profile-details {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .detail-item {
+            align-items: center;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            color: #475569;
+            display: flex;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-top: 15px;
+            gap: 12px;
+            padding: 14px 16px;
         }
 
-        .designation {
-            color: #777;
-            font-size: 15px;
+        .detail-item i {
+            color: #0284c7;
+            height: 18px;
+            width: 18px;
+        }
+
+        .message-content {
+            padding: 54px 56px 50px;
+            position: relative;
+        }
+
+        .message-header {
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+        }
+
+        .message-label {
+            color: #0284c7;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1.2px;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .divider {
-            width: 60px;
-            height: 3px;
-            background: #1f3c88;
-            margin: 15px auto 25px;
-            border-radius: 2px;
+        .message-header h2 {
+            color: #0f172a;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin: 0;
         }
 
-        p {
-            font-size: 15.5px;
-            text-align: justify;
-            margin-bottom: 18px;
-            line-height: 1.8;
+        .message-body {
+            position: relative;
+        }
+
+        .quote-icon {
+            color: #e0f2fe;
+            height: 54px;
+            position: absolute;
+            right: 0;
+            top: -12px;
+            width: 54px;
         }
 
         .greeting {
-            font-weight: 500;
+            color: #0f172a;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 22px;
         }
 
-        .closing {
-            margin-top: 30px;
-            font-weight: 600;
+        .message-body p {
+            color: #475569;
+            font-size: 1.03rem;
+            line-height: 1.85;
+            margin: 0 0 20px;
+            max-width: 720px;
         }
 
-        footer {
-            text-align: center;
-            font-size: 13px;
-            color: #888;
-            margin: 20px 0;
+        .focus-strip {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 32px 0;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-                margin: 20px;
+        .focus-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .focus-card i {
+            color: #0284c7;
+            height: 22px;
+            margin-bottom: 12px;
+            width: 22px;
+        }
+
+        .focus-card strong {
+            color: #0f172a;
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .focus-card span {
+            color: #64748b;
+            display: block;
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .sign-off {
+            align-items: center;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 34px;
+            padding-top: 26px;
+        }
+
+        .signature {
+            color: #0f172a;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            font-size: 2.35rem;
+            line-height: 1;
+            opacity: 0.84;
+            transform: rotate(-2deg);
+        }
+
+        .sign-off strong {
+            color: #0f172a;
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .sign-off span {
+            color: #64748b;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .page-hero {
+                padding-bottom: 92px;
             }
 
-            header {
-                font-size: 22px;
+            .desk-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-panel {
+                border-bottom: 1px solid #e2e8f0;
+                border-right: none;
+            }
+
+            .portrait-card,
+            .portrait-card img {
+                min-height: 360px;
+            }
+
+            .message-content {
+                padding: 42px 34px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .page-hero {
+                padding: 48px 20px 84px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
+            }
+
+            .desk-container {
+                margin-top: -56px;
+                padding: 0 16px;
+            }
+
+            .profile-panel,
+            .message-content {
+                padding: 22px;
+            }
+
+            .portrait-card,
+            .portrait-card img {
+                min-height: 310px;
+            }
+
+            .message-header h2 {
+                font-size: 1.55rem;
+            }
+
+            .quote-icon {
+                display: none;
+            }
+
+            .focus-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .sign-off {
+                align-items: flex-start;
+                flex-direction: column;
             }
         }
     </style>
+
+    <script src="../components.js" defer></script>
 </head>
 
 <body>
+    <app-navbar base="../"></app-navbar>
 
-<header>
-    Principal's Desk
-</header>
+    <section class="page-hero">
+        <div class="hero-inner">
+            <div class="eyebrow">Principal's Desk</div>
+            <h1>Guiding technical education with purpose and discipline</h1>
+            <p>
+                A message from the Principal of Govt. Polytechnic College Leh on learning, values, and preparing students for a changing professional world.
+            </p>
+        </div>
+    </section>
 
-<div class="container">
+    <main class="desk-container">
+        <section class="desk-shell">
+            
+            <aside class="profile-panel" aria-label="Principal profile">
+                <div class="portrait-card">
+                    <img src="../image/principal.jpg" alt="Er. Sajad Ahmed Khan" onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Photo'">
+                    <div class="profile-caption">
+                        <h2>Er. Sajad Ahmed Khan</h2>
+                        <p>M. Tech, MIE</p>
+                    </div>
+                </div>
 
-    <div class="profile">
-        <img src="../image/principal.jpg" alt="Principal">
-        <div class="name">Er. Sajad Ahmed Khan (M. Tech, MIE)</div>
-        <div class="designation">Principal</div>
-        <div class="divider"></div>
-    </div>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <i data-lucide="award"></i>
+                        <span>Principal</span>
+                    </div>
+                    <div class="detail-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Govt. Polytechnic College Leh</span>
+                    </div>
+                </div>
+            </aside>
 
-    <p class="greeting">Dear Students, Faculty and Staff,</p>
+            <article class="message-content">
+                <div class="message-header">
+                    <div class="message-label">Message</div>
+                    <h2>Building confident, skilled and responsible professionals</h2>
+                </div>
 
-    <p>
-        It is a matter of great privilege for me to serve as the Principal of this institution. I am committed to upholding
-        the values and traditions that have made our technical institute a center of excellence in education. Our mission
-        is to provide you with the knowledge, skills, and resources necessary to thrive in a rapidly evolving world.
-    </p>
+                <div class="message-body">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <div class="greeting">Dear Students, Faculty and Staff,</div>
+                    
+                    <p>
+                        It is a matter of great privilege for me to serve as the Principal of this institution. I am committed to upholding the values and traditions that have made our technical institute a center of excellence in education. Our mission is to provide you with the knowledge, skills, and resources necessary to thrive in a rapidly evolving world.
+                    </p>
 
-    <p>
-        In this era of globalization, when there is a growing need for qualified professionals, Polytechnic Colleges play
-        a vital role in shaping industry-ready individuals. Our institution provides modern infrastructure, dedicated faculty,
-        and an environment that promotes both academic excellence and ethical values.
-    </p>
+                    <p>
+                        In this era of globalization, when there is a growing need for qualified professionals, Polytechnic Colleges play a vital role in shaping industry-ready individuals. Our institution provides modern infrastructure, dedicated faculty, and an environment that promotes both academic excellence and ethical values.
+                    </p>
 
-    <p>
-        We strongly encourage students to maintain a healthy balance between academics and extracurricular activities.
-        Participation in sports, cultural events, and innovation projects helps in building a well-rounded personality.
-    </p>
+                    <p>
+                        We strongly encourage students to maintain a healthy balance between academics and extracurricular activities. Participation in sports, cultural events, and innovation projects helps in building a well-rounded personality.
+                    </p>
 
-    <p>
-        Success is not a destination but a continuous journey that demands perseverance, discipline, and dedication.
-        I am confident that each one of you has the potential to achieve great heights.
-    </p>
+                    <div class="focus-strip" aria-label="Institutional focus areas">
+                        <div class="focus-card">
+                            <i data-lucide="book-open-check"></i>
+                            <strong>Academic Excellence</strong>
+                            <span>Strengthening technical knowledge through focused learning.</span>
+                        </div>
+                        <div class="focus-card">
+                            <i data-lucide="users"></i>
+                            <strong>Ethical Growth</strong>
+                            <span>Encouraging discipline, responsibility, and teamwork.</span>
+                        </div>
+                        <div class="focus-card">
+                            <i data-lucide="lightbulb"></i>
+                            <strong>Innovation Mindset</strong>
+                            <span>Preparing students for practical industry challenges.</span>
+                        </div>
+                    </div>
 
-    <p>I wish you all a successful and rewarding academic year ahead.</p>
+                    <p>
+                        Success is not a destination but a continuous journey that demands perseverance, discipline, and dedication. I am confident that each one of you has the potential to achieve great heights. I wish you all a successful and rewarding academic year ahead.
+                    </p>
 
-    <p class="closing">Best Regards,<br>Principal</p>
+                    <div class="sign-off">
+                        <div class="signature">Sajad Ahmed</div>
+                        <div>
+                            <strong>Er. Sajad Ahmed Khan</strong>
+                            <span>Principal, Govt. Polytechnic College Leh</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
-</div>
+        </section>
+    </main>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2026 Govt Polytechnic College Leh</p>
-</div>
+    <app-footer base="../"></app-footer>
 </body>
 </html>

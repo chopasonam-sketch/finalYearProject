@@ -160,9 +160,22 @@ button:hover {
   }
 }
 </style>
+
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Hide old navbars and footers to show new ones */
+    header, .main-nav, .navbar, footer, .footer { display: none !important; }
+    /* Give spacing for new navbar */
+    body { padding-top: 80px; }
+  </style>
+  <script src="./components.js" defer></script>
 </head>
 
-<body>
+<body style="background-color: var(--light); font-family: 'Inter', sans-serif;">
+  <app-navbar base="./"></app-navbar>
+  <main class="page-content">
 
 <!-- NAVBAR -->
 <div class="navbar">
@@ -254,5 +267,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 });
 </script>
 
+  </main>
+  <app-footer base="./"></app-footer>
 </body>
 </html>

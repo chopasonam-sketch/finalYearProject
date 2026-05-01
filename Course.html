@@ -1,159 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Courses - Govt Polytechnic Leh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Govt Polytechnic College Leh</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-  background: #0077b6;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 40px 20px;
-  background: #caf0f8;
-}
-
-.header h1 {
-  font-size: 32px;
-}
-
-/* COURSE SECTION */
-.section {
-  padding: 40px 20px;
-}
-
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  flex: 1 1 280px;
-  max-width: 320px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.card h2 {
-  color: #0077b6;
-}
-
-.card p {
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #0077b6;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-/* FOOTER */
-.footer {
-  background: #023e8a;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 24px;
-  }
-}
-</style>
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="./components.js" defer></script>
 </head>
 
-<body>
+<body class="department-page">
+  <app-navbar base="./"></app-navbar>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <h3>GPC Leh</h3>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="course.html">Courses</a>
-    <a href="#">Admission</a>
-  </div>
-</div>
-
-<!-- HEADER -->
-<div class="header">
-  <h1>Our Diploma Courses</h1>
-  <p>We offer 3-Year Diploma Programs in Engineering</p>
-</div>
-
-<!-- COURSES -->
-<div class="section">
-  <div class="cards">
-
-    <!-- CIVIL -->
-    <div class="card">
-      <h2>🏗 Civil Engineering</h2>
-      <p><b>Duration:</b> 3 Years</p>
-      <p>Learn construction, design, and infrastructure development including roads, bridges, and buildings.</p>
-      <a href="/civil.html" class="btn">View Details</a>
+  <section class="department-hero">
+    <div class="department-hero-inner">
+      <div class="department-kicker">Diploma Programs</div>
+      <h1>Engineering courses designed for practical technical careers</h1>
+      <p>
+        Explore the three-year diploma departments offered at Govt. Polytechnic College Leh and choose the path that fits your strengths.
+      </p>
     </div>
+  </section>
 
-    <!-- COMPUTER -->
-    <div class="card">
-      <h2>💻 Computer Engineering</h2>
-      <p><b>Duration:</b> 3 Years</p>
-      <p>Study programming, networking, and software development with modern technologies.</p>
-      <a href="computer.html" class="btn">View Details</a>
-    </div>
+  <main class="department-content">
+    <section class="department-overview">
+      <div>
+        <div class="department-section-label">Our Courses</div>
+        <h2>Focused departments with hands-on learning</h2>
+        <p>
+          Each department combines classroom learning, laboratory work, field exposure, and project-based practice so students build job-ready technical confidence.
+        </p>
+      </div>
 
-    <!-- MECHANICAL -->
-    <div class="card">
-      <h2>⚙ Mechanical Engineering</h2>
-      <p><b>Duration:</b> 3 Years</p>
-      <p>Understand machines, manufacturing, thermodynamics, and mechanical systems.</p>
-      <a href="mechanical.html" class="btn">View Details</a>
-    </div>
+      <div class="department-stats">
+        <div class="department-stat">
+          <i data-lucide="graduation-cap"></i>
+          <div><strong>3 Departments</strong><span>Civil, Computer, and Mechanical Engineering</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="clock-3"></i>
+          <div><strong>3 Years</strong><span>Structured diploma programs</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="briefcase-business"></i>
+          <div><strong>Career Ready</strong><span>Skills for industry and public sector pathways</span></div>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</div>
+    <section class="course-catalog" aria-label="Course list">
+      <article class="course-tile">
+        <div class="course-tile-icon"><i data-lucide="hard-hat"></i></div>
+        <h2>Civil Engineering</h2>
+        <p>Learn construction, surveying, structural basics, estimation, roads, buildings, and public infrastructure systems.</p>
+        <div class="course-meta"><i data-lucide="clock-3"></i><span>Duration: 3 Years</span></div>
+        <a class="department-action" href="./Courses/civil.html"><i data-lucide="arrow-right"></i> View Department</a>
+      </article>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2026 Govt Polytechnic College Leh</p>
-</div>
+      <article class="course-tile">
+        <div class="course-tile-icon"><i data-lucide="cpu"></i></div>
+        <h2>Computer Engineering</h2>
+        <p>Study programming, database systems, web development, networking, IT support, and modern software practices.</p>
+        <div class="course-meta"><i data-lucide="clock-3"></i><span>Duration: 3 Years</span></div>
+        <a class="department-action" href="./Courses/computer.html"><i data-lucide="arrow-right"></i> View Department</a>
+      </article>
 
+      <article class="course-tile">
+        <div class="course-tile-icon"><i data-lucide="settings"></i></div>
+        <h2>Mechanical Engineering</h2>
+        <p>Explore machines, manufacturing processes, thermodynamics, automobile systems, maintenance, and workshop practice.</p>
+        <div class="course-meta"><i data-lucide="clock-3"></i><span>Duration: 3 Years</span></div>
+        <a class="department-action" href="./Courses/mechanical.html"><i data-lucide="arrow-right"></i> View Department</a>
+      </article>
+    </section>
+  </main>
+
+  <app-footer base="./"></app-footer>
 </body>
 </html>

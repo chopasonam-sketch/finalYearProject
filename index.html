@@ -1,203 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Govt Polytechnic College Leh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Govt Polytechnic College Leh</title>
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="./components.js" defer></script>
+  <style>
+    body {
+      background: #f6f8fb;
+      padding-top: 80px;
+      scroll-behavior: smooth;
+    }
 
-<style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+    .page-content {
+      max-width: none;
+      padding: 0;
+      animation: none;
+    }
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: #0077b6;
-  padding: 10px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1000;
-}
+    .home-section {
+      padding: 64px 24px;
+    }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
 
-/* HERO SLIDER */
-.hero {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
+    .section-kicker {
+      color: #0284c7;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-}
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      color: #0f172a;
+      line-height: 1.12;
+      margin: 0;
+    }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .section-heading p {
+      max-width: 440px;
+      color: #64748b;
+      margin: 0;
+    }
 
-.active {
-  display: block;
-}
+    .home-hero {
+      min-height: 600px;
+      display: grid;
+      align-items: center;
+      padding: 78px 24px 58px;
+      background:
+        linear-gradient(120deg, rgba(2, 62, 138, 0.94), rgba(0, 119, 182, 0.86)),
+        url("./image/bg-logo.png") center right 9% / min(430px, 70vw) no-repeat;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* SECTION */
-.section {
-  padding: 40px;
-  text-align: center;
-}
+    .hero-grid {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) 390px;
+      gap: 42px;
+      align-items: center;
+    }
 
-/* CARDS */
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    .hero-copy {
+      max-width: 720px;
+    }
 
-.card {
-  width: 250px;
-  padding: 20px;
-  background: #f1f1f1;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #e0f2fe;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
 
-.card:hover {
-  transform: translateY(-10px);
-  background: #caf0f8;
-}
+    .hero-copy h1 {
+      color: white;
+      font-size: clamp(2.35rem, 5vw, 4.8rem);
+      line-height: 0.98;
+      margin: 0 0 22px;
+      letter-spacing: 0;
+    }
 
-/* NOTICE BOARD */
-.notice {
-  background: #ffd166;
-  padding: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-}
+    .hero-copy p {
+      color: #dbeafe;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      max-width: 640px;
+      margin: 0 0 30px;
+    }
 
-.notice p {
-  display: inline-block;
-  animation: scroll 10s linear infinite;
-}
+    .hero-actions,
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-@keyframes scroll {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
+    .hero-btn,
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
 
+    .hero-btn.primary {
+      background: #fbbf24;
+      color: #172554;
+      box-shadow: 0 14px 30px rgba(251, 191, 36, 0.28);
+    }
 
-/* FOOTER */
-.footer {
-  background: #023e8a;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+    .hero-btn.secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-</style>
+    .hero-btn:hover,
+    .text-link:hover,
+    .student-card:hover,
+    .course-card:hover,
+    .notice-card:hover,
+    .resource-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
+      padding: 24px;
+      color: #0f172a;
+    }
+
+    .hero-panel h2 {
+      color: #0f172a;
+      font-size: 1.25rem;
+      margin: 0 0 16px;
+    }
+
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-stat {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: #0369a1;
+      font-size: 1.55rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .hero-stat span {
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .admission-strip {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      background: #ecfeff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .admission-strip strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+
+    .admission-strip span {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .icon-link {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #0284c7;
+      color: white;
+    }
+
+    .student-hub {
+      margin-top: -34px;
+      position: relative;
+      z-index: 2;
+      padding-top: 0;
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .student-card,
+    .course-card,
+    .notice-card,
+    .resource-card,
+    .principal-card,
+    .campus-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .student-card {
+      min-height: 152px;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .student-card:hover {
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e0f2fe;
+      color: #0284c7;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .card-icon svg,
+    .hero-badge svg,
+    .hero-btn svg,
+    .text-link svg,
+    .icon-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .student-card h3,
+    .course-card h3,
+    .resource-card h3,
+    .campus-card h3 {
+      color: #0f172a;
+      font-size: 1rem;
+      margin: 0 0 8px;
+    }
+
+    .student-card p,
+    .course-card p,
+    .resource-card p,
+    .campus-card p {
+      color: #64748b;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .notice-board {
+      background: white;
+    }
+
+    .notice-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 22px;
+    }
+
+    .notice-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .notice-card {
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .notice-date {
+      background: #f1f5f9;
+      color: #0369a1;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .notice-date span {
+      display: block;
+      color: #64748b;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .notice-card h3 {
+      color: #0f172a;
+      font-size: 1rem;
+      margin: 0 0 4px;
+    }
+
+    .notice-card p {
+      color: #64748b;
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .notice-card a {
+      color: #0284c7;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .help-panel {
+      background: #0f172a;
+      color: white;
+      border-radius: 8px;
+      padding: 24px;
+      align-self: start;
+    }
+
+    .help-panel h3 {
+      color: white;
+      font-size: 1.3rem;
+      margin: 0 0 12px;
+    }
+
+    .help-panel p {
+      color: #cbd5e1;
+      margin: 0 0 18px;
+    }
+
+    .help-panel a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      padding: 11px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-weight: 700;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .course-top {
+      min-height: 180px;
+      padding: 22px;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      color: white;
+      background-size: cover !important;
+      background-position: center !important;
+    }
+
+    .course-top i {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      padding: 10px;
+      border-radius: 12px;
+      display: inline-flex;
+    }
+
+    .course-top.civil {
+      background: linear-gradient(to bottom, rgba(3, 105, 161, 0.4), rgba(0, 0, 0, 0.7)), url('./image/civil.webp');
+    }
+
+    .course-top.computer {
+      background: linear-gradient(to bottom, rgba(15, 118, 110, 0.4), rgba(0, 0, 0, 0.7)), url('./image/cse.jpg');
+    }
+
+    .course-top.mechanical {
+      background: linear-gradient(to bottom, rgba(180, 83, 9, 0.4), rgba(0, 0, 0, 0.7)), url('./image/mechinical.jpg');
+    }
+
+    .course-top svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .course-card-content {
+      padding: 22px;
+    }
+
+    .course-card-content ul {
+      list-style: none;
+      margin: 16px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .course-card-content a {
+      color: #0284c7;
+      font-weight: 700;
+    }
+
+    .life-section {
+      background: #eef6fb;
+    }
+
+    .life-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 22px;
+    }
+
+    .principal-card {
+      overflow: hidden;
+    }
+
+    .principal-card img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+
+    .principal-content {
+      padding: 22px;
+    }
+
+    .principal-content h3 {
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+
+    .principal-content p {
+      color: #64748b;
+      margin: 0 0 16px;
+    }
+
+    .campus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .campus-card,
+    .resource-card {
+      padding: 22px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .resource-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .resource-card a,
+    .text-link {
+      color: #0284c7;
+      font-weight: 800;
+    }
+
+    .resource-card a {
+      display: inline-flex;
+      margin-top: 14px;
+    }
+
+    .cta-band {
+      background: #0f172a;
+      color: white;
+    }
+
+    .cta-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-band h2 {
+      color: white;
+      margin: 0 0 8px;
+    }
+
+    .cta-band p {
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .notice-layout,
+      .life-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 540px;
+      }
+
+      .hub-grid,
+      .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding-top: 72px;
+      }
+
+      .home-hero {
+        min-height: auto;
+        padding: 54px 18px 64px;
+        background:
+          linear-gradient(120deg, rgba(2, 62, 138, 0.95), rgba(0, 119, 182, 0.9)),
+          url("./image/bg-logo.png") center bottom 18px / 240px no-repeat;
+      }
+
+      .home-section {
+        padding: 46px 18px;
+      }
+
+      .section-heading,
+      .notice-card,
+      .admission-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+      }
+
+      .hub-grid,
+      .resources-grid,
+      .campus-grid,
+      .hero-stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notice-card {
+        gap: 12px;
+      }
+
+      .notice-date {
+        width: 92px;
+      }
+
+      .hero-actions,
+      .quick-actions {
+        flex-direction: column;
+      }
+
+      .hero-btn,
+      .text-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <app-navbar base="./"></app-navbar>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  
-    <div id="wrap">
+  <main class="page-content">
+    <section class="home-hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge"><i data-lucide="map-pin"></i> Government Polytechnic College Leh, Ladakh</div>
+          <h1>Practical technical education for ambitious students.</h1>
+          <p>Find admissions, courses, notices, downloads, department information, campus facilities, and student support links from one fresh home page.</p>
+          <div class="hero-actions">
+            <a class="hero-btn primary" href="./Admission/procedure.html"><i data-lucide="send"></i> Apply for Admission</a>
+            <a class="hero-btn secondary" href="#courses-section"><i data-lucide="book-open"></i> Explore Courses</a>
+          </div>
+        </div>
 
-      <div id="top">  <a href="index.htm"><img src="image/logo.gif" alt="Govt. Polytechnic College Leh" title="Govt. Polytechnic College, Leh - J&amp;K" width="1800" height="135" border="0"></a>
-      <div id="top-right">
-     </div>
-       </div>
-   <b><a href="/Aboutus.html">About us</a>
-    <a href="/Course.html">Courses</a>
-    <a href="/admission.html">admission</a>
-    <a href="/contact.html">Contact</a></b>
-    </div>
-</div>
+        <aside class="hero-panel" aria-label="College highlights">
+          <h2>Student Dashboard</h2>
+          <div class="hero-stat-grid">
+            <div class="hero-stat"><strong>3</strong><span>Diploma branches</span></div>
+            <div class="hero-stat"><strong>4+</strong><span>Student resources</span></div>
+            <div class="hero-stat"><strong>5</strong><span>Admission links</span></div>
+            <div class="hero-stat"><strong>24/7</strong><span>Online access</span></div>
+          </div>
+          <div class="admission-strip">
+            <div>
+              <strong>Admissions and documents</strong>
+              <span>Check procedure, seat intake, fee structure, and forms.</span>
+            </div>
+            <a class="icon-link" href="./Admission/procedure.html" aria-label="Admission procedure"><i data-lucide="arrow-right"></i></a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<!-- HERO SLIDER -->
-<div class="hero">
-  <div class="slide active">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iYl_K9LKIToqWHOg8O8hCFI0alu-ZQDbaQ&s">
-  </div>
-  <div class="slide">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrgTbJirxmjyeCqub-rYyMMGsIu72E7nGIXw&s">
-  </div>
-  <div class="slide">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sxhLvgMIct6iMOfZ7iuubDnKU6AYGpi1ZA&s">
-  </div>
-</div>
+    <section class="home-section student-hub">
+      <div class="section-inner">
+        <div class="hub-grid">
+          <a class="student-card" href="./Notifications/circulars.html">
+            <span class="card-icon"><i data-lucide="megaphone"></i></span>
+            <h3>Latest Circulars</h3>
+            <p>Important academic updates, student notices, and college announcements.</p>
+          </a>
+          <a class="student-card" href="./Downloads/time_table.html">
+            <span class="card-icon"><i data-lucide="calendar-days"></i></span>
+            <h3>Time Table</h3>
+            <p>Access class schedules, exam routines, and academic planning files.</p>
+          </a>
+          <a class="student-card" href="./Downloads/syllabus.html">
+            <span class="card-icon"><i data-lucide="file-text"></i></span>
+            <h3>Syllabus</h3>
+            <p>Download branch-wise syllabus resources for every semester.</p>
+          </a>
+          <a class="student-card" href="./Grievance/submit.html">
+            <span class="card-icon"><i data-lucide="message-square-warning"></i></span>
+            <h3>Student Grievance</h3>
+            <p>Submit feedback or concerns through the student support channel.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<!-- NOTICE -->
-<div class="notice">
-  <p><a href="admission.html">📢 Admissions Open | Exam Schedule Released | New Courses Available</a></p>
-</div>
+    <section class="home-section notice-board">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Student updates</div>
+            <h2>Notices that matter right now</h2>
+          </div>
+          <p>Fast access to the pages students usually need during admissions, exams, and daily academic work.</p>
+        </div>
 
-<!-- ABOUT -->
-<div class="section">
-  <h2>Why Choose Us?</h2>
-  <div class="cards">
-   <div class="card">🎓 Quality Education</div>
-    <div class="card">🏫 Modern Labs</div>
-    <div class="card">💼 Placement Support</div>
-  </div>
-</div>
+        <div class="notice-layout">
+          <div class="notice-list">
+            <article class="notice-card">
+              <div class="notice-date"><span>Admission</span>2026</div>
+              <div>
+                <h3>Admission procedure and eligibility</h3>
+                <p>Review the application process, required documents, and anti-ragging information.</p>
+              </div>
+              <a href="./Admission/procedure.html">Open</a>
+            </article>
+            <article class="notice-card">
+              <div class="notice-date"><span>Exam</span>New</div>
+              <div>
+                <h3>Results and circulars</h3>
+                <p>Check result announcements and official circular updates from the college.</p>
+              </div>
+              <a href="./Notifications/results.html">Open</a>
+            </article>
+            <article class="notice-card">
+              <div class="notice-date"><span>Forms</span>PDF</div>
+              <div>
+                <h3>Student forms and prospectus</h3>
+                <p>Find downloadable forms, prospectus details, and student information pages.</p>
+              </div>
+              <a href="./Downloads/forms.html">Open</a>
+            </article>
+          </div>
 
-<!-- COURSES -->
-<div class="section">
-  <h2>Our Courses</h2>
-  <div class="cards">
-    <div class="card">Computer Engineering</div>
-    <div class="card">Civil Engineering</div>
-    <div class="card">Mechanical Engineering</div>
-  </div>
-</div>
+          <aside class="help-panel">
+            <h3>Quick help</h3>
+            <p>Use these shortcuts when you need department, staff, or contact information without searching through menus.</p>
+            <a href="./Staff/teaching.html"><i data-lucide="users"></i> Teaching staff</a>
+            <a href="./AboutUs/library.html"><i data-lucide="library"></i> Library facility</a>
+            <a href="./contact.html"><i data-lucide="phone-call"></i> Contact office</a>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<div class="footer">
-  <b><p>© 2026 Govt Polytechnic College Leh</p></b>
-</div>
+    <section class="home-section" id="courses-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Courses</div>
+            <h2>Choose your diploma path</h2>
+          </div>
+          <p>Each department page connects students with faculty, labs, syllabus, and branch details.</p>
+        </div>
 
-<script>
-// SLIDER SCRIPT
-let slides = document.querySelectorAll(".slide");
-let index = 0;
+        <div class="courses-grid">
+          <article class="course-card">
+            <div class="course-top civil"><i data-lucide="hard-hat"></i></div>
+            <div class="course-card-content">
+              <h3>Civil Engineering</h3>
+              <p>Build foundations in surveying, materials, structures, and public infrastructure.</p>
+              <ul>
+                <li><a href="./Courses/civil.html">Department overview</a></li>
+                <li><a href="./Courses/civil_labs.html">Labs and practicals</a></li>
+                <li><a href="./Courses/civil_faculty.html">Faculty</a></li>
+              </ul>
+            </div>
+          </article>
 
-function showSlide() {
-  slides.forEach(slide => slide.classList.remove("active"));
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}
+          <article class="course-card">
+            <div class="course-top computer"><i data-lucide="cpu"></i></div>
+            <div class="course-card-content">
+              <h3>Computer Engineering</h3>
+              <p>Learn programming, systems, networking, databases, and modern computing basics.</p>
+              <ul>
+                <li><a href="./Courses/computer.html">Department overview</a></li>
+                <li><a href="./Courses/comp_labs.html">Computer labs</a></li>
+                <li><a href="./Courses/comp_syllabus.html">Syllabus</a></li>
+              </ul>
+            </div>
+          </article>
 
-setInterval(showSlide, 3000);
-</script>
+          <article class="course-card">
+            <div class="course-top mechanical"><i data-lucide="settings"></i></div>
+            <div class="course-card-content">
+              <h3>Mechanical Engineering</h3>
+              <p>Study machines, manufacturing, workshop practice, design, and applied mechanics.</p>
+              <ul>
+                <li><a href="./Courses/mechanical.html">Department overview</a></li>
+                <li><a href="./Courses/mech_labs.html">Workshop and labs</a></li>
+                <li><a href="./Courses/mech_faculty.html">Faculty</a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="home-section life-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Campus life</div>
+            <h2>Facilities that support learning</h2>
+          </div>
+          <p>A compact view of the spaces and support systems students use across the academic year.</p>
+        </div>
+
+        <div class="life-grid">
+          <article class="principal-card">
+            <img src="./image/principal.jpg" alt="Principal of Government Polytechnic College Leh">
+            <div class="principal-content">
+              <h3>Principal's Desk</h3>
+              <p>Read the message from the institution leadership and learn about the college's academic direction.</p>
+              <a class="text-link" href="./AboutUs/princpaldesk.html">Read message <i data-lucide="arrow-right"></i></a>
+            </div>
+          </article>
+
+          <div class="campus-grid">
+            <a class="campus-card" href="./AboutUs/classrooms_labs.html">
+              <span class="card-icon"><i data-lucide="flask-conical"></i></span>
+              <h3>Classrooms and labs</h3>
+              <p>Explore academic spaces for practical and theory learning.</p>
+            </a>
+            <a class="campus-card" href="./AboutUs/hostel.html">
+              <span class="card-icon"><i data-lucide="building-2"></i></span>
+              <h3>Hostel</h3>
+              <p>Student accommodation information and hostel facilities.</p>
+            </a>
+            <a class="campus-card" href="./AboutUs/sports_facilities.html">
+              <span class="card-icon"><i data-lucide="trophy"></i></span>
+              <h3>Sports facilities</h3>
+              <p>Support for physical activity, recreation, and student events.</p>
+            </a>
+            <a class="campus-card" href="./AboutUs/how_to_reach.html">
+              <span class="card-icon"><i data-lucide="navigation"></i></span>
+              <h3>How to reach</h3>
+              <p>Find location guidance for students, parents, and visitors.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Downloads</div>
+            <h2>Useful student resources</h2>
+          </div>
+          <p>Put common student documents close to the homepage so they are easy to find.</p>
+        </div>
+
+        <div class="resources-grid">
+          <article class="resource-card">
+            <span class="card-icon"><i data-lucide="clipboard-list"></i></span>
+            <h3>Fee Structure</h3>
+            <p>Check fee-related information for admission and academics.</p>
+            <a href="./Admission/fee_structure.html">View details</a>
+          </article>
+          <article class="resource-card">
+            <span class="card-icon"><i data-lucide="users-round"></i></span>
+            <h3>Seat Intake</h3>
+            <p>See branch-wise intake information before applying.</p>
+            <a href="./Admission/seat_intake.html">View seats</a>
+          </article>
+          <article class="resource-card">
+            <span class="card-icon"><i data-lucide="newspaper"></i></span>
+            <h3>Prospectus</h3>
+            <p>Open the college prospectus and academic overview.</p>
+            <a href="./Downloads/prospectus.html">Open prospectus</a>
+          </article>
+          <article class="resource-card">
+            <span class="card-icon"><i data-lucide="briefcase-business"></i></span>
+            <h3>Placement</h3>
+            <p>Find placement announcements and student career updates.</p>
+            <a href="./Notifications/placement.html">View updates</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section cta-band">
+      <div class="cta-inner">
+        <div>
+          <h2>Need college information quickly?</h2>
+          <p>Reach the office, explore admission pages, or check student notices from the top navigation anytime.</p>
+        </div>
+        <div class="quick-actions">
+          <a class="hero-btn primary" href="./contact.html"><i data-lucide="mail"></i> Contact Us</a>
+          <a class="hero-btn secondary" href="./Notifications/circulars.html"><i data-lucide="bell"></i> Notices</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer base="./"></app-footer>
 </body>
 </html>

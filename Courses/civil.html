@@ -1,223 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Civil Engineering - Govt Polytechnic Leh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civil Engineering - Govt Polytechnic College Leh</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-  background: #0077b6;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 40px 20px;
-  background: #caf0f8;
-}
-
-.header h1 {
-  font-size: 32px;
-}
-
-/* SECTION */
-.section {
-  padding: 40px 20px;
-}
-
-.box {
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* CARDS */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card {
-  flex: 1 1 280px;
-  background: #f1f1f1;
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  background: #e0f7ff;
-}
-
-/* TABLE */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background: #0077b6;
-  color: white;
-}
-
-/* FOOTER */
-.footer {
-  background: #023e8a;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-</style>
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="../components.js" defer></script>
 </head>
 
-<body>
+<body class="department-page">
+  <app-navbar base="../"></app-navbar>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <h3>Civil Engineering</h3>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="course.html">Courses</a>
-    <a href="admission.html">Admission</a>
-  </div>
-</div>
-
-<!-- HEADER -->
-<div class="header">
-  <h1>Civil Engineering Diploma</h1>
-  <p>3-Year Diploma Program - Govt Polytechnic College Leh</p>
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-  <div class="box">
-    <h2>About Civil Engineering</h2>
-    <p>
-      Civil Engineering is a core branch of engineering that deals with the design, construction,
-      and maintenance of infrastructure such as roads, bridges, buildings, dams, and water systems.
-      It is one of the oldest and most important engineering fields.
-    </p>
-  </div>
-</div>
-
-<!-- SEMESTER SYLLABUS -->
-<div class="section">
-  <div class="box">
-    <h2>Semester-wise Syllabus (3 Years)</h2>
-
-    <table>
-      <tr>
-        <th>Semester</th>
-        <th>Main Subjects</th>
-      </tr>
-
-      <tr>
-        <td>1st Semester</td>
-        <td>Engineering Mathematics, Engineering Physics, Engineering Drawing, Workshop Practice</td>
-      </tr>
-
-      <tr>
-        <td>2nd Semester</td>
-        <td>Civil Engineering Materials, Surveying Basics, Applied Chemistry</td>
-      </tr>
-
-      <tr>
-        <td>3rd Semester</td>
-        <td>Strength of Materials, Surveying-I, Building Construction</td>
-      </tr>
-
-      <tr>
-        <td>4th Semester</td>
-        <td>Surveying-II, Fluid Mechanics, RCC Structures</td>
-      </tr>
-
-      <tr>
-        <td>5th Semester</td>
-        <td>Transportation Engineering, Estimation & Costing, Environmental Engineering</td>
-      </tr>
-
-      <tr>
-        <td>6th Semester</td>
-        <td>Project Work, Industrial Training, Advanced Construction Techniques</td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-<!-- SUBJECT HIGHLIGHTS -->
-<div class="section">
-  <div class="box">
-    <h2>Key Subjects</h2>
-    <div class="cards">
-
-      <div class="card">🏗 Structural Engineering</div>
-      <div class="card">🧭 Surveying</div>
-      <div class="card">🏢 Building Construction</div>
-      <div class="card">🌊 Fluid Mechanics</div>
-      <div class="card">🛣 Transportation Engineering</div>
-      <div class="card">📐 Engineering Drawing</div>
-
+  <section class="department-hero">
+    <div class="department-hero-inner">
+      <div class="department-kicker">Department</div>
+      <h1>Civil Engineering</h1>
+      <p>
+        A core engineering program that prepares students to plan, build, inspect, and maintain essential infrastructure with technical accuracy.
+      </p>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CAREER -->
-<div class="section">
-  <div class="box">
-    <h2>Career Opportunities</h2>
-    <div class="cards">
+  <main class="department-content">
+    <section class="department-overview">
+      <div>
+        <div class="department-section-label">About Department</div>
+        <h2>Building the technical foundation for roads, structures, and public works</h2>
+        <p>
+          The Civil Engineering department trains students in construction materials, surveying, structural concepts, transportation engineering, and estimation. The program combines drawing, field work, and practical learning so students can contribute confidently on project sites.
+        </p>
+        <div class="department-actions">
+          <a class="department-action" href="civil_faculty.html"><i data-lucide="users"></i> View Faculty</a>
+          <a class="department-action secondary" href="civil_syllabus.html"><i data-lucide="file-text"></i> Syllabus</a>
+          <a class="department-action secondary" href="civil_labs.html"><i data-lucide="ruler"></i> Labs</a>
+        </div>
+      </div>
 
-      <div class="card">🏗 Site Engineer</div>
-      <div class="card">📏 Surveyor</div>
-      <div class="card">🏢 Construction Supervisor</div>
-      <div class="card">🏛 Government Jobs (PWD, Railways)</div>
-      <div class="card">📊 Estimation Engineer</div>
+      <div class="department-stats">
+        <div class="department-stat">
+          <i data-lucide="clock-3"></i>
+          <div><strong>3 Years</strong><span>Full-time diploma program</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="hard-hat"></i>
+          <div><strong>Site Ready</strong><span>Surveying, materials, and construction practice</span></div>
+        </div>
+        <div class="department-stat">
+          <i data-lucide="landmark"></i>
+          <div><strong>Public Works</strong><span>Roads, buildings, water systems, and estimates</span></div>
+        </div>
+      </div>
+    </section>
 
+    <div class="department-grid">
+      <section class="department-block">
+        <div class="department-section-label">What Students Learn</div>
+        <h2>Core Subjects</h2>
+        <div class="department-card-grid">
+          <div class="department-card"><i data-lucide="building-2"></i><div><strong>Building Construction</strong><span>Materials, methods, and site execution.</span></div></div>
+          <div class="department-card"><i data-lucide="compass"></i><div><strong>Surveying</strong><span>Measurements, levels, maps, and field work.</span></div></div>
+          <div class="department-card"><i data-lucide="waves"></i><div><strong>Fluid Mechanics</strong><span>Water flow and hydraulic fundamentals.</span></div></div>
+          <div class="department-card"><i data-lucide="drafting-compass"></i><div><strong>Engineering Drawing</strong><span>Technical drawings and plan reading.</span></div></div>
+        </div>
+      </section>
+
+      <section class="department-block">
+        <div class="department-section-label">Career Paths</div>
+        <h2>Opportunities</h2>
+        <div class="department-card-grid">
+          <div class="department-card"><i data-lucide="hard-hat"></i><div><strong>Site Engineer</strong><span>Support daily construction execution.</span></div></div>
+          <div class="department-card"><i data-lucide="map"></i><div><strong>Surveyor</strong><span>Carry out field measurement and layout.</span></div></div>
+          <div class="department-card"><i data-lucide="clipboard-check"></i><div><strong>Supervisor</strong><span>Coordinate teams, materials, and quality.</span></div></div>
+          <div class="department-card"><i data-lucide="calculator"></i><div><strong>Estimator</strong><span>Prepare quantities, costing, and records.</span></div></div>
+        </div>
+      </section>
     </div>
-  </div>
-</div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2026 Govt Polytechnic College Leh</p>
-</div>
+    <section class="department-block" style="margin-top: 28px;">
+      <div class="department-section-label">Academic Flow</div>
+      <h2>Semester-wise Highlights</h2>
+      <ul class="semester-list">
+        <li><strong>Semester 1</strong><span>Engineering Mathematics, Engineering Physics, Engineering Drawing, Workshop Practice.</span></li>
+        <li><strong>Semester 2</strong><span>Civil Engineering Materials, Surveying Basics, Applied Chemistry.</span></li>
+        <li><strong>Semester 3</strong><span>Strength of Materials, Surveying-I, Building Construction.</span></li>
+        <li><strong>Semester 4</strong><span>Surveying-II, Fluid Mechanics, RCC Structures.</span></li>
+        <li><strong>Semester 5</strong><span>Transportation Engineering, Estimation and Costing, Environmental Engineering.</span></li>
+        <li><strong>Semester 6</strong><span>Project Work, Industrial Training, Advanced Construction Techniques.</span></li>
+      </ul>
+    </section>
+  </main>
 
+  <app-footer base="../"></app-footer>
 </body>
 </html>
